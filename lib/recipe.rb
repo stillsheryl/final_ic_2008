@@ -6,17 +6,16 @@ class Recipe
   end
 
   def add_ingredient(ingredient, quantity)
-    @ingredients.each do |ingredient|
-      @ingredients << ingredient if !@ingredients.include?(ingredient)
-      ingredient.add_quantity(quantity)
-    end
-    @ingredients
+    ingredient.add_quantity(quantity)
+    @ingredients << ingredient if !@ingredients.include?(ingredient)
   end
 
   def ingredients_required
+    required = {}
     @ingredients.each do |ingredient|
-      # require "pry"; binding.pry
+      required[ingredient] = ingredient.quantity
     end
+    required
   end
 
 end
