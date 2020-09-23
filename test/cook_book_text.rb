@@ -91,5 +91,4 @@ class CookBookTest < Minitest::Test
     assert_equal expected, cookbook.summary
   end
 
-
 end

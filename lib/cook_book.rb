@@ -29,17 +29,14 @@ class CookBook
     ingredients
   end
 
-  # def summary
-  #   @recipes. each do |recipe|
-  #     require "pry"; binding.pry
-  #   end
-  # end
+  def summary
+    summary_info = {}
+    @recipes.each do |recipe|
+      summary_info[:name] = recipe.name
+      summary_info[:details] = ingredients_by_calories(recipe)
+      summary_info[:total_calories] = total_calories(recipe)
+    end
+    summary_info
+  end
 
 end
-
-
-# {:name=>"Mac and Cheese",
-# :details=> {:ingredients=>
-#   [{:ingredient=>"Macaroni", :amount=>"8 oz"},
-#   {:ingredient=>"Cheese", :amount=>"2 C"}], :total_calories=>440}
-#   }
