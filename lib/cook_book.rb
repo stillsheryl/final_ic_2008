@@ -12,16 +12,10 @@ class CookBook
     "04-22-2020"
   end
 
-  def total_calories
-    recipe_calories = {}
-    @recipes.each do |recipe|
-      total_calories = 0
-      recipe.ingredients.each do |ingredient|
-        total_calories += ingredient.calories * ingredient.quantity
-      end
-      recipe_calories[recipe] = total_calories
+  def total_calories(recipe)
+    recipe.ingredients.sum do |ingredient|
+      ingredient.calories * ingredient.quantity
     end
-    recipe_calories
   end
 
   # def summary

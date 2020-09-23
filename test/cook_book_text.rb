@@ -45,8 +45,9 @@ class CookBookTest < Minitest::Test
     cookbook.add_recipe(recipe1)
     cookbook.add_recipe(recipe2)
 
-    expected = {recipe1 => 440, recipe2 => 500}
-    assert_equal expected, cookbook.total_calories
+    assert_equal 440, cookbook.total_calories(recipe1)
+    assert_equal 500, cookbook.total_calories(recipe2)
+
   end
 
   def test_summary
@@ -64,7 +65,7 @@ class CookBookTest < Minitest::Test
     recipe2.add_ingredient(ingredient4, 100)
     cookbook.add_recipe(recipe1)
     cookbook.add_recipe(recipe2)
-        
+
     # assert_equal [{:ingredient=>"Macaroni", :amount=>"8 oz"},
     #   {:ingredient=>"Cheese", :amount=>"2 C"}], cookbook.ingredients_by_calories
 
