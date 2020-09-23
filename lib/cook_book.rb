@@ -18,6 +18,17 @@ class CookBook
     end
   end
 
+  def ingredients_by_calories(recipe)
+    ingredients = []
+    amounts = {}
+    recipe.ingredients.map do |ingredient|
+      amounts[:ingredient] = ingredient.name
+      amounts[:amount] = "#{ingredient.quantity} #{ingredient.unit}"
+      ingredients << amounts
+    end
+    ingredients
+  end
+
   # def summary
   #   @recipes. each do |recipe|
   #     require "pry"; binding.pry

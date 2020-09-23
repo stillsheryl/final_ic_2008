@@ -66,8 +66,9 @@ class CookBookTest < Minitest::Test
     cookbook.add_recipe(recipe1)
     cookbook.add_recipe(recipe2)
 
-    assert_equal [{:ingredient=>"Macaroni", :amount=>"8 oz"},
-      {:ingredient=>"Cheese", :amount=>"2 C"}], cookbook.ingredients_by_calories
+    expected = [{:ingredient=>"Macaroni", :amount=>"8 oz"},
+      {:ingredient=>"Cheese", :amount=>"2 C"}]
+    assert_equal expected, cookbook.ingredients_by_calories(recipe1)
   end
 
   def test_summary
