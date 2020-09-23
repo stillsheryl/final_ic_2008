@@ -26,7 +26,7 @@ class CookBookTest < Minitest::Test
   def test_date
     cookbook = CookBook.new
 
-    assert_equal "04-22-2020", cookbook.date
+    assert_equal "09-23-2020", cookbook.date
   end
 
   def test_total_calories

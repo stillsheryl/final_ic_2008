@@ -1,3 +1,5 @@
+require 'date'
+
 class CookBook
   attr_reader :recipes
   def initialize
@@ -9,7 +11,8 @@ class CookBook
   end
 
   def date
-    "04-22-2020"
+    date = Date.today
+    date.strftime("%m-%d-%Y")
   end
 
   def total_calories(recipe)
