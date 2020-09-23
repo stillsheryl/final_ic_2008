@@ -13,4 +13,12 @@ class CookBookTest < Minitest::Test
     assert_equal [], cookbook.recipes
   end
 
+  def test_add_recipe
+    cookbook = CookBook.new
+    cookbook.add_recipe(recipe1)
+    cookbook.add_recipe(recipe2)
+
+    assert_equal [recipe1, recipe2], cookbook.recipes
+  end
+
 end
