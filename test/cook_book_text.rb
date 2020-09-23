@@ -15,6 +15,8 @@ class CookBookTest < Minitest::Test
 
   def test_add_recipe
     cookbook = CookBook.new
+    recipe1 = Recipe.new("Mac and Cheese")
+    recipe2 = Recipe.new("Cheese Burger")
     cookbook.add_recipe(recipe1)
     cookbook.add_recipe(recipe2)
 

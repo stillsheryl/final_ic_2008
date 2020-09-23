@@ -30,6 +30,10 @@ class RecipeTest < Minitest::Test
      ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 30})
     recipe1 = Recipe.new("Mac and Cheese")
 
+    recipe1.add_ingredient(ingredient1, 2)
+    recipe1.add_ingredient(ingredient1, 4)
+    recipe1.add_ingredient(ingredient2, 8)
+
     expected = {
        ingredient1 => 6,
        ingredient2 => 8}
